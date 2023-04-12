@@ -7,7 +7,8 @@ class Category(models.Model):
         return self.name
 
 class Question(models.Model):
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images/', blank=True, null=True)
+    has_image = models.BooleanField(default=False)
     question = models.CharField(max_length=200)
     answer = models.CharField(max_length=20)
     a = models.CharField(max_length=20)
